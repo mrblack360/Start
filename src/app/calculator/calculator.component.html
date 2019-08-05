@@ -1,0 +1,39 @@
+<div class="calculator">
+
+    <input type="text" class="calculator-screen" value="{{currentValue}}" disabled />
+  
+    <div class="calculator-keys">
+  
+      <button type="button" class="operator" value="+" (click)="assignOperator('+'); setOperand1()">+</button>
+      <button type="button" class="operator" value="-" (click)="assignOperator('-')">-</button>
+      <button type="button" class="operator" value="*" (click)="assignOperator('*')">&times;</button>
+      <button type="button" class="operator" value="/" (click)="assignOperator('/')">&divide;</button>
+  
+      <button type="button" value="7" (click)="setCurrentValue(7)">7</button>
+      <button type="button" value="8" (click)="setCurrentValue(8)">8</button>
+      <button type="button" value="9" (click)="setCurrentValue(9)">9</button>
+  
+  
+      <button type="button" value="4" (click)="setCurrentValue(4)">4</button>
+      <button type="button" value="5" (click)="setCurrentValue(5)">5</button>
+      <button type="button" value="6" (click)="setCurrentValue(6)">6</button>
+  
+  
+      <button type="button" value="1" (click)="setCurrentValue(1)">1</button>
+      <button type="button" value="2" (click)="setCurrentValue(2)">2</button>
+      <button type="button" value="3" (click)="setCurrentValue(3)">3</button>
+  
+  
+      <button type="button" value="0" (click)="setCurrentValue(0)">0</button>
+      <button type="button" class="decimal" value="." (click)="setCurrentValueToDot()">.</button>
+      <button type="button" class="all-clear" value="all-clear" (click)="allClear()">AC</button>
+  
+      <button type="button" class="equal-sign" value="=" (click)="setOperand2(); equals()">=</button>
+  
+    </div>
+  </div>
+  <p style="text-align: center; margin-top: 63px">
+  Oprand1: <input class="min" value="{{operand1}}" disabled> 
+  Operator: <input class="min" value="{{operator}}" disabled> 
+  Operand2: <input class="min" value="{{operand2}}" disabled>
+  </p>
