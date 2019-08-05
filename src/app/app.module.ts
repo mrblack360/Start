@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ImageComponent } from './image/image.component';
 import { FooterComponent } from './footer/footer.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
     ImageComponent,
-    FooterComponent
+    FooterComponent,
+    SchedulerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,11 @@
 <div class="top">
   {{title | uppercase}}
 </div>
-<div *ngIf="displayButton; then open else close"></div>
-<ng-template #open><button (click)="changeImg(); displayCalculator=true; displayButton=false">Open Calculator</button></ng-template>
-<ng-template #close><button (click)="displayCalculator=false; displayButton=true">Close Calculator</button></ng-template>
-
+<button [routerLink]="['/Home']" routerLinkActive="router-link-active" >Home</button>
+<button [routerLink]="['/Scheduler']" routerLinkActive="router-link-active" (click)="displayImage=false">My Scheduler</button>
+<button [routerLink]="['/Calculator']" routerLinkActive="router-link-active" >Open Calculator</button>
 <button *ngFor="let tab of tabs">{{tab}}</button>
+<div class="mainBody"><router-outlet></router-outlet></div>
 
-<app-calculator *ngIf="displayCalculator"></app-calculator>
-<app-image *ngIf="!displayCalculator" [imageno]="img" (imageEmitter)="onMessage($event)"></app-image>
-<p class="span" *ngIf="!displayCalculator"><span>{{message}}</span></p>
 <!-- <app-footer></app-footer> -->
-<router-outlet></router-outlet>
+
