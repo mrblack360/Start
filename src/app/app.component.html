@@ -2,8 +2,8 @@
   {{title | uppercase}}
 </div>
 <button [routerLink]="['/Home']" routerLinkActive="router-link-active" >Home</button>
-<button [routerLink]="['/Scheduler']" routerLinkActive="router-link-active" (click)="displayImage=false">My Scheduler</button>
-<button [routerLink]="['/Calculator']" routerLinkActive="router-link-active" >Open Calculator</button>
+<button [routerLink]="['/Scheduler']" routerLinkActive="router-link-active" (click)="displayImage=false">Scheduler</button>
+<button [routerLink]="['/Calculator']" routerLinkActive="router-link-active" >Calculator</button>
 <button *ngFor="let tab of tabs">{{tab}}</button>
 <div class="mainBody"><router-outlet></router-outlet></div>
 
