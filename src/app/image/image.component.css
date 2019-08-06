@@ -6,3 +6,8 @@ img{
     height: 90%;
     margin-top: 5px;
 }
+.alert{
+  width: 80%;
+  position: sticky;
+  left: 10%;
+}
