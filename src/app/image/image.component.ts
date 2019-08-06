@@ -6,15 +6,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./image.component.css']
 })
 export class ImageComponent implements OnInit {
-  
-  @Input('imageno') imgno;
-  
-  @Output() public imageEmitter: EventEmitter<string>=new EventEmitter();
+
+  imgno: number;
 
   constructor() { }
-  
+
   ngOnInit() {}
-    fireEmitter(){
-      this.imageEmitter.emit("Do you also need help like this girl; here you are.  Photo By: Erick Chingalo");
-    }
+
+  setImgno(){
+    var time = Date();
+    console.log(time)
+  }
 }

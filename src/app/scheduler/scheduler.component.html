@@ -4,19 +4,55 @@
   </div>
   <div class="card-body">
     <form>
-    <input placeholder="Add a task">
+    <input placeholder="Add a task" [(ngModel)]="current" name="taskInput">
     </form>
+<<<<<<< HEAD
     <button class="btn btn-primary">Add a task<i class="fa fa-plus"></i></button>
+=======
+    <button class="btn btn-primary" (click)="addTask()">Add a task <i class="fa fa-plus"></i></button>
+>>>>>>> Developer
   </div>
 </div>
 <div class="alert alert-primary" role="alert">
     My Tasks
   </div>
-<div class="card">
+<div  *ngIf="taskDisplay; then task else notask"></div>
+<ng-template #task>
+<div class="card" *ngFor="let task of tasks">
     <div class="card-header">
-      Task
+      {{task.taskValue}}
     </div>
-    <div class="card-body">
-
+    <div class="card-body alert">
+        <button class="btn btn-primary btn-success">Mark as done <i class="fa fa-check"></i></button>
+        <button class="btn btn-primary btn-secondary btn-middle">Edit task <i class="fa fa-edit"></i></button>
+        <button class="btn btn-primary btn-danger btn-right">Remove Task <i class="fa fa-trash-undo"></i></button>
     </div>
   </div>
+  </ng-template>
+  <ng-template #notask>
+      <div class="card-body">
+        No tasks yet!
+        </div>
+  </ng-template>
+
+  <div class="alert alert-primary" role="alert">
+      My Completed Tasks
+    </div>
+  <div  *ngIf="taskDisplay; then taskdone else notaskdone"></div>
+  <ng-template #taskdone>
+  <div class="card" *ngFor="let task of tasks">
+      <div class="card-header" *ngIf="task.status">
+        {{task.taskValue}}
+      </div>
+      <div class="card-body alert" *ngIf="task.status">
+          <button class="btn btn-primary btn-success">Mark as Undone <i class="fa fa-check"></i></button>
+          <button class="btn btn-primary btn-secondary btn-middle">Edit task <i class="fa fa-edit"></i></button>
+          <button class="btn btn-primary btn-danger btn-right">Remove Task <i class="fa fa-trash-undo"></i></button>
+      </div>
+    </div>
+    </ng-template>
+    <ng-template #notaskdone>
+        <div class="card-body">
+          No tasks completed yet!
+          </div>
+    </ng-template>
