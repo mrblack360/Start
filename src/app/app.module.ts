@@ -3,6 +3,7 @@ import { NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { task } from '../task';
+import { TasksService} from './Services/tasks.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

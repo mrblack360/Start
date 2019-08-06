@@ -40,3 +40,7 @@ span{
 p.span{
     text-align: center;
 }
+.col-sm-6{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}

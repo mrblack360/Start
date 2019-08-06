@@ -7,6 +7,7 @@ import { format } from 'util';
   templateUrl: './image.component.html',
   styleUrls: ['./image.component.css']
 })
+
 export class ImageComponent implements OnInit {
 
   imgno = this.setImgno();

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TasksService, HEROES } from './Services/tasks.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,5 @@ export class AppComponent {
   tabs = ['Scientific Calculator', 'Help Others', 'Post Question', 'Profile'];
   title = 'My HomeWorker';
 
+  Heroes = HEROES;
 }
