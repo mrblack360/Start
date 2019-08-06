@@ -7,6 +7,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
+  imgno: number;
+
   constructor() { }
 
   ngOnInit() {}
+
+  setImgno(){
+    var time = Date();
+    console.log(time)
+  }
+}
