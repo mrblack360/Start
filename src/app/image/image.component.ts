@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { formatDate } from '@angular/common';
+import { format } from 'util';
 
 @Component({
   selector: 'app-image',
@@ -7,14 +9,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ImageComponent implements OnInit {
 
-  imgno: number;
+  imgno = this.setImgno();
 
   constructor() { }
 
   ngOnInit() {}
 
-  setImgno(){
-    var time = Date();
-    console.log(time)
+  setImgno() {
+    let time = Date.now();
+    time = time % 4;
+    return time.toString();
   }
 }
