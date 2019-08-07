@@ -10,10 +10,10 @@
 
     <div class="calculator-keys">
 
-      <button type="button" class="operator" value="+" (click)="assignOperator('+'); setOperand1()">+</button>
-      <button type="button" class="operator" value="-" (click)="assignOperator('-'); setOperand1()">-</button>
-      <button type="button" class="operator" value="*" (click)="assignOperator('*'); setOperand1()">&times;</button>
-      <button type="button" class="operator" value="/" (click)="assignOperator('/'); setOperand1()">&divide;</button>
+      <button type="button" class="operator" value="+" (click)="assignOperator('+')">+</button>
+      <button type="button" class="operator" value="-" (click)="assignOperator('-')">-</button>
+      <button type="button" class="operator" value="*" (click)="assignOperator('*')">&times;</button>
+      <button type="button" class="operator" value="/" (click)="assignOperator('/')">&divide;</button>
 
       <button type="button" value="7" (click)="setCurrentValue(7)">7</button>
       <button type="button" value="8" (click)="setCurrentValue(8)">8</button>
@@ -34,7 +34,7 @@
       <button type="button" class="decimal" value="." (click)="setCurrentValueToDot()">.</button>
       <button type="button" class="all-clear" value="all-clear" (click)="allClear()">AC</button>
 
-      <button type="button" class="equal-sign" value="=" (click)="setOperand2(); equals()">=</button>
+      <button type="button" class="equal-sign" value="=" (click)="equals()">=</button>
 
     </div>
   </div>

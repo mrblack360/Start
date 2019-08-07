@@ -8,7 +8,7 @@ import { concat } from 'rxjs/operators';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent implements OnInit {
-  currentValue = 0;
+  currentValue = '0';
   operator = '';
   operand1 = 0;
   operand2 = 0;
@@ -19,55 +19,46 @@ export class CalculatorComponent implements OnInit {
   }
   assignOperator(value) {
     this.operator = value;
+    this.operand1 = parseFloat(this.currentValue);
+    this.currentValue = '0';
   }
-  setOperand1() {
-    this.operand1 = this.currentValue;
-    this.currentValue = 0;
-  }
-  setOperand2() {
-    this.operand2 = this.currentValue;
-  }
+
   setCurrentValue(value) {
-    if (this.currentValue === 0) {
-      this.currentValue = value;
+    if (this.currentValue === '0') {
+      this.currentValue = value.toString();
      } else {
-       const currentValue = this.currentValue.toString().concat(value);
-       // tslint:disable-next-line: radix
-       this.currentValue = parseInt(currentValue);
+       this.currentValue = this.currentValue.concat(value);
     }
   }
   setCurrentValueToDot() {
-    if (this.currentValue === 0) {
+    if (this.currentValue === '0') {
       const dot = '.';
-      const actualValue = this.currentValue.toString().concat(dot);
-      // tslint:disable-next-line: radix
-      this.currentValue = parseInt(actualValue);
+      this.currentValue = this.currentValue.toString().concat(dot);
      } else {
        const dott = '.';
-       const currentValue = this.currentValue.toString().concat(dott);
-       // tslint:disable-next-line: radix
-       this.currentValue = parseInt(currentValue);
+       this.currentValue = this.currentValue.toString().concat(dott);
     }
   }
   allClear() {
-    this.currentValue = 0;
+    this.currentValue = '0';
   }
   equals() {
+    this.operand2 = parseFloat(this.currentValue);
     switch (this.operator) {
       case '+': {
-        this.currentValue = this.operand1 + this.operand2;
+        this.currentValue = (this.operand1 + this.operand2).toString();
       }         break;
       case '-': {
-        this.currentValue = this.operand1 - this.operand2;
+        this.currentValue = (this.operand1 - this.operand2).toString();
       }         break;
       case '*': {
-        this.currentValue = this.operand1 * this.operand2;
+        this.currentValue = (this.operand1 * this.operand2).toString();
       }         break;
       case '/': {
-        this.currentValue = this.operand1 / this.operand2;
+        this.currentValue = (this.operand1 / this.operand2).toString();
       }         break;
       default: {
-        this.currentValue = 0;
+        this.currentValue = 'Math Error';
       }
     }
   }
