@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-import { task } from '../task';
 import { TasksService} from './Services/tasks.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,7 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { task } from 'src/task';
+import { TasksService } from '../Services/tasks.service';
 
 @Component({
   selector: 'app-scheduler',
@@ -8,15 +8,15 @@ import { task } from 'src/task';
 })
 export class SchedulerComponent implements OnInit {
 
-  tasks: task[];
+  tasks = [];
   taskDisplay = false;
 
   current: any;
 
-  constructor() { }
+  constructor(private taskss: TasksService) { }
 
   ngOnInit() {
-    this.tasks = [];
+    this.taskss.getHeroes().subscribe(data => this.tasks = data);
   }
 
   addTask() {

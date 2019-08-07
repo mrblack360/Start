@@ -1,25 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { task } from 'src/task';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksService {
 
-  public url = "/assets/Data/Heroes.json";
+  public url = './src/tasks.json';
 
   constructor(private http: HttpClient) { }
 
-  getHeroes(): Observable<Hero[]> {
-    return this.http.get<Hero[]>(this.url);
+  getHeroes(): Observable<task[]> {
+    return this.http.get<task[]>(this.url);
   }
-
-}
-export class Hero {
-  id: number;
-  name: string;
-  isSecret = false;
 }
 
-export const HEROES: Hero[] = [];
+export const tasks: task[] = [];
