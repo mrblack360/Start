@@ -73,9 +73,11 @@
     grid-gap: 20px;
     padding: 20px;
   }
+
   .min{
     width: 50px;
   }
+
   .main{
     text-align: center;
   }
