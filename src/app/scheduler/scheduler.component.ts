@@ -8,7 +8,7 @@ import { TasksService } from '../Services/tasks.service';
 })
 export class SchedulerComponent implements OnInit {
 
-  tasks = [];
+  tasks: any[] = [];
   taskDisplay = false;
 
   current: any;
@@ -16,7 +16,7 @@ export class SchedulerComponent implements OnInit {
   constructor(private taskss: TasksService) { }
 
   ngOnInit() {
-    this.taskss.getHeroes().subscribe(data => this.tasks = data);
+    this.taskss.getHeroes().subscribe(data => this.tasks = data, err => console.log(err));
   }
 
   addTask() {

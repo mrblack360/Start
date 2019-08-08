@@ -2,7 +2,7 @@
     <img
     src="assets/images/image{{imgno}}.jpg"
     alt="Homework {{imgno}}"
-    (click)="setImgno()">
+    >
 </div>
 <div [ngSwitch]="imgno">
   <div *ngSwitchCase="'0'" class="alert alert-primary">Is studying tiresome? Come on and join the community!</div>
@@ -10,3 +10,4 @@
   <div *ngSwitchCase="'2'" class="alert alert-primary">Improve your understanding and simplify your Homeworks!</div>
   <div *ngSwitchCase="'3'" class="alert alert-primary">Let's homework for you!</div>
 </div>
+<app-footer></app-footer>
