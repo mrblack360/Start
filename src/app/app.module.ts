@@ -26,7 +26,7 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [TasksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
