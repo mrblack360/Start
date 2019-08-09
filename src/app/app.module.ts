@@ -11,6 +11,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { ImageComponent } from './image/image.component';
 import { FooterComponent } from './footer/footer.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
+import { TaskPipePipe } from './task-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
     CalculatorComponent,
     ImageComponent,
     FooterComponent,
-    SchedulerComponent
+    SchedulerComponent,
+    TaskPipePipe
   ],
   imports: [
     BrowserModule,

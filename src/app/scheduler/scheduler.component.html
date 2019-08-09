@@ -1,3 +1,4 @@
+<!-- the top part of the component display responsible for the task creation -->
 <div class="card">
   <div class="card-header">
     Create a task
@@ -10,12 +11,13 @@
 
   </div>
 </div>
+<!-- Displaying the added tasks -->
 <div class="alert alert-primary" role="alert">
     My Tasks
   </div>
 <div  *ngIf="taskDisplay; then task else notask"></div>
 <ng-template #task>
-<div class="card" *ngFor="let task of tasks">
+<div class="card" *ngFor="let task of (tasks | taskPipe : true)">
     <div class="card-header">
       {{task.taskValue}}
     </div>
@@ -37,9 +39,9 @@
     </div>
   <div  *ngIf="taskDisplay; then taskdone else notaskdone"></div>
   <ng-template #taskdone>
-  <div class="card" *ngFor="let task of tasks">
+  <div class="card" *ngFor="let task of (tasks | taskPipe : true)">
       <div class="card-header" *ngIf="task.status">
-        {{task.taskValue}}
+        {{ task.taskValue }}
       </div>
       <div class="card-body alert" *ngIf="task.status">
           <button class="btn btn-primary btn-success">Mark as Undone <i class="fa fa-check"></i></button>
