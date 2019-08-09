@@ -10,5 +10,6 @@ div.footer{
     padding-left: 10px;
     padding-top: 10px;
     position: relative;
+    margin-top: 60px;
     bottom: 0px;
 }
