@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../Services/tasks.service';
+import { task } from 'src/task';
 
 @Component({
   selector: 'app-scheduler',
@@ -10,8 +11,9 @@ export class SchedulerComponent implements OnInit {
 
   tasks: any[] = [];
   taskDisplay = true;
-
   current: any;
+
+  internalTasks: task[] = [];
 
   constructor(private taskss: TasksService) { }
 
@@ -20,6 +22,10 @@ export class SchedulerComponent implements OnInit {
   }
 
   addTask() {
-    this.tasks.push({ taskno: 1, taskValue: this.current, status: false });
+    console.log(this.internalTasks);
+    this.internalTasks.push({ taskno: 1, taskValue: this.current, status: false });
+  }
+  editTask(id, Value, Status) {
+    this.internalTasks[id] = {taskno: id, taskValue: Value, status: !Status};
   }
 }

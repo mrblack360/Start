@@ -17,12 +17,13 @@
   </div>
 <div  *ngIf="taskDisplay; then task else notask"></div>
 <ng-template #task>
-<div class="card" *ngFor="let task of (tasks | taskPipe : true)">
+<div class="card" *ngFor="let task of internalTasks">
     <div class="card-header">
       {{task.taskValue}}
+      <span class="badge badge-pill badge-primary">Done: {{task.status}}</span>
     </div>
     <div class="card-body alert">
-        <button class="btn btn-primary btn-success">Mark as done <i class="fa fa-check"></i></button>
+        <button class="btn btn-primary btn-success" (click)="editTask(task.taskno, task.taskValue, task.status)">Mark as done <i class="fa fa-check"></i></button>
         <button class="btn btn-primary btn-secondary btn-middle">Edit task <i class="fa fa-edit"></i></button>
         <button class="btn btn-primary btn-danger btn-right">Remove Task <i class="fa fa-trash-undo"></i></button>
     </div>
@@ -39,12 +40,12 @@
     </div>
   <div  *ngIf="taskDisplay; then taskdone else notaskdone"></div>
   <ng-template #taskdone>
-  <div class="card" *ngFor="let task of (tasks | taskPipe : true)">
-      <div class="card-header" *ngIf="task.status">
+  <div class="card" *ngFor="let task of internalTasks | taskFilter : true">
+      <div class="card-header">
         {{ task.taskValue }}
       </div>
-      <div class="card-body alert" *ngIf="task.status">
-          <button class="btn btn-primary btn-success">Mark as Undone <i class="fa fa-check"></i></button>
+      <div class="card-body alert">
+          <button class="btn btn-primary btn-success">Mark as Undone <i class="fa fa-undo"></i></button>
           <button class="btn btn-primary btn-secondary btn-middle">Edit task <i class="fa fa-edit"></i></button>
           <button class="btn btn-primary btn-danger btn-right">Remove Task <i class="fa fa-trash-undo"></i></button>
       </div>
