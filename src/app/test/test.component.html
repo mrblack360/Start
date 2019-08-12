@@ -1,1 +1,12 @@
-<p>test works!</p>
+<table class="table table-hover">
+  <thead>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let OrgUnit of OrgUnits">
+      <td>{{ OrgUnit.id }}</td>
+      <td>{{ OrgUnit.name }}</td>
+      <td>{{ OrgUnit.level }}</td>
+    </tr>
+  </tbody>
+</table>

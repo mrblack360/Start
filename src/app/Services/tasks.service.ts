@@ -10,7 +10,7 @@ import { OrgUnit } from '../org-unit';
 export class TasksService {
 
   public url = 'assets/tasks.json';
-  public dhisUrl = 'https://play.dhis2.org/2.30/api/26/organisationUnits.json?fields=id,name,level';
+  public dhisUrl = 'assets/Data/OrgUnits.json';
 
   constructor(private http: HttpClient, private http2: HttpClient) { }
 
