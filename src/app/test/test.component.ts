@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { OrgUnit } from '../org-unit';
+import { TasksService } from '../Services/tasks.service';
 
 @Component({
   selector: 'app-test',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
+  OrgUnits: OrgUnit[] = [];
 
-  constructor() { }
+  constructor(private OrgUnitss: TasksService) { }
 
   ngOnInit() {
+    this.OrgUnitss.getOrgUnits()
+      .subscribe(arg => this.OrgUnits = arg);
+
+
   }
 
 }

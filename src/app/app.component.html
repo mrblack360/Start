@@ -4,6 +4,7 @@
 <button [routerLink]="['/Home']" routerLinkActive="router-link-active" >Home</button>
 <button [routerLink]="['/Scheduler']" routerLinkActive="router-link-active" (click)="displayImage=false">Scheduler</button>
 <button [routerLink]="['/Calculator']" routerLinkActive="router-link-active" >Calculator</button>
+<button [routerLink]="['/Test']" routerLinkActive="router-link-active">Test</button>
 <button *ngFor="let tab of tabs">{{tab}}</button>
 <div class="mainBody"><router-outlet></router-outlet></div>
 <app-footer></app-footer>

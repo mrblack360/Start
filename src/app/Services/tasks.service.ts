@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { task } from 'src/task';
+import { OrgUnit } from '../org-unit';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,16 @@ import { task } from 'src/task';
 export class TasksService {
 
   public url = 'assets/tasks.json';
+  public dhisUrl = 'https://play.dhis2.org/2.30/api/26/organisationUnits.json?fields=id,name,level';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private http2: HttpClient) { }
 
    getTasks(): Observable<task[]> {
     return this.http.get<task[]>(this.url);
+  }
+
+  getOrgUnits(): Observable<OrgUnit[]> {
+    return this.http2.get<OrgUnit[]>(this.dhisUrl);
   }
 }
 
