@@ -12,6 +12,7 @@ import { ImageComponent } from './image/image.component';
 import { FooterComponent } from './footer/footer.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { TaskPipePipe } from './task-pipe.pipe';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TaskPipePipe } from './task-pipe.pipe';
     ImageComponent,
     FooterComponent,
     SchedulerComponent,
-    TaskPipePipe
+    TaskPipePipe,
+    TestComponent
   ],
   imports: [
     BrowserModule,
