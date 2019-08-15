@@ -8,6 +8,7 @@ import { ProgramsComponent } from './programs/programs.component';
 
 
 const routes: Routes = [
+  { path: '', redirectTo: 'Home', pathMatch: 'full' },
   { path: 'Scheduler', component: SchedulerComponent },
   { path: 'Home', component: ImageComponent},
   { path: 'Calculator', component: CalculatorComponent},
