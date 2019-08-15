@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { task } from 'src/task';
 import { OrgUnit } from '../org-unit';
+import { NgxDhis2HttpClientService } from '@iapps/ngx-dhis2-http-client';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { OrgUnit } from '../org-unit';
 export class TasksService {
 
   public url = 'assets/tasks.json';
-  public dhisUrl = 'assets/Data/OrgUnits.json';
+  public dhisUrl = '../../../api/26/organisationUnits.json?fields=[id,name,level]';
 
   constructor(private http: HttpClient, private http2: HttpClient) { }
 

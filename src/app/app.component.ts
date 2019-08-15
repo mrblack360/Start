@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  tabs = ['Scientific Calculator', 'Help Others', 'Post Question', 'Profile'];
+  tabs = ['Scientific Calculator', 'Questions', 'Profile'];
   title = 'My HomeWorker';
 
 

@@ -14,9 +14,10 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
     this.OrgUnitss.getOrgUnits()
-      .subscribe(arg => this.OrgUnits = arg);
-
-
+      .subscribe(arg => {
+          console.log(arg);
+          this.OrgUnits = arg.organisationUnits;
+        });
   }
 
 }

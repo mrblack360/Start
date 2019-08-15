@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { TaskPipePipe } from './task-pipe.pipe';
 import { TestComponent } from './test/test.component';
+import { ProgramsComponent } from './programs/programs.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TestComponent } from './test/test.component';
     FooterComponent,
     SchedulerComponent,
     TaskPipePipe,
-    TestComponent
+    TestComponent,
+    ProgramsComponent
   ],
   imports: [
     BrowserModule,
