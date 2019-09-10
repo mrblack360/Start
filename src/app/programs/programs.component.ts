@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
@@ -13,6 +13,7 @@ export class ProgramsComponent implements OnInit {
   constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
