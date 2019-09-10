@@ -16,7 +16,7 @@ export class TestComponent implements OnInit {
     this.OrgUnitss.getOrgUnits()
       .subscribe(arg => {
           console.log(arg);
-          this.OrgUnits = arg.organisationUnits;
+          this.OrgUnits = arg;
         });
   }
 
