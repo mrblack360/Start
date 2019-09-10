@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { TasksService } from './Services/tasks.service';
 
@@ -16,7 +17,11 @@ import { SchedulerComponent } from './scheduler/scheduler.component';
 import { TaskPipePipe } from './task-pipe.pipe';
 import { TestComponent } from './test/test.component';
 import { ProgramsComponent } from './programs/programs.component';
-import { MatDialogModule, MatFormFieldModule } from '@angular/material';
+import {
+  MatDialogModule,
+  MatFormFieldModule,
+  MatButtonModule
+} from '@angular/material';
 import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
@@ -37,8 +42,10 @@ import { DialogComponent } from './dialog/dialog.component';
     AppRoutingModule,
     FormsModule,
     MatDialogModule,
+    MatButtonModule,
     MatFormFieldModule,
     HttpClientModule,
+    DragDropModule,
     StoreModule.forRoot({}) // here we're pass a reducer property
   ],
   providers: [TasksService],

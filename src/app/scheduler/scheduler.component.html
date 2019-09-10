@@ -5,14 +5,15 @@
   </div>
   <div class="card-body">
     <form>
-    <input placeholder="Add a task" [(ngModel)]="current" name="taskInput">
+      <input placeholder="Add a task" [(ngModel)]="current" name="taskInput" />
     </form>
-    <button class="btn btn-primary" (click)="addTask()">Add a task <i class="fa fa-plus"></i></button>
-
+    <button class="btn btn-primary" (click)="addTask()">
+      Add a task <i class="fa fa-plus"></i>
+    </button>
   </div>
 </div>
 <!-- Displaying the added tasks -->
-<div class="alert alert-primary" role="alert">
+<!-- <div class="alert alert-primary" role="alert">
     My Tasks
   </div>
 <div  *ngIf="taskDisplay; then task else notask"></div>
@@ -55,4 +56,33 @@
         <div class="card-body">
           No tasks completed yet!
         </div>
-    </ng-template>
+    </ng-template> -->
+<div class="example-container">
+  <h2>To do</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="todo"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{ item }}</div>
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Done</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="example-box" *ngFor="let item of done" cdkDrag>{{ item }}</div>
+  </div>
+</div>

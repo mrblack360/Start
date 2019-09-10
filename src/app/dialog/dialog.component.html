@@ -1,7 +1,7 @@
-<h1 mat-dialog-title>Hi {{ data }}</h1>
+<h1 mat-dialog-title>Hi {{ data.name }}</h1>
 <div mat-dialog-content>
   <p>What's your favorite animal?</p>
-  <input matInput [(ngModel)]="data" />
+  <input matInput [(ngModel)]="data.animal" />
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
