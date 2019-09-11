@@ -14,7 +14,6 @@
 </div>
 <div class="example-container">
   <h2>To do</h2>
-
   <div
     cdkDropList
     #todoList="cdkDropList"
@@ -26,10 +25,8 @@
     <div class="example-box" *ngFor="let item of todo" cdkDrag>{{ item }}</div>
   </div>
 </div>
-
 <div class="example-container">
   <h2>Done</h2>
-
   <div
     cdkDropList
     #doneList="cdkDropList"

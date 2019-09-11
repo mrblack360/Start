@@ -14,7 +14,6 @@ import {
 })
 export class SchedulerComponent implements OnInit {
   tasks: any[] = [];
-  taskDisplay = true;
   current: any;
 
   internalTasks: task[] = [];
@@ -31,13 +30,7 @@ export class SchedulerComponent implements OnInit {
   }
 
   addTask() {
-    // console.log(this.internalTasks);
-    // this.internalTasks.push({
-    //   taskno: 1,
-    //   taskValue: this.current,
-    //   status: false
     this.todo.push(this.current);
-    // });
   }
   editTask(id, Value, Status) {
     this.internalTasks[id] = { taskno: id, taskValue: Value, status: !Status };
