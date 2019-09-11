@@ -10,14 +10,11 @@ import { TasksService } from '../Services/tasks.service';
 export class TestComponent implements OnInit {
   OrgUnits: OrgUnit[] = [];
 
-  constructor(private OrgUnitss: TasksService) { }
+  constructor(private OrgUnitss: TasksService) {}
 
   ngOnInit() {
-    this.OrgUnitss.getOrgUnits()
-      .subscribe(arg => {
-          console.log(arg);
-          this.OrgUnits = arg;
-        });
+    this.OrgUnitss.getOrgUnits().subscribe(arg => {
+      this.OrgUnits = arg;
+    });
   }
-
 }
