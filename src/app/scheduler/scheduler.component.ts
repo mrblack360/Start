@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TasksService } from '../Services/tasks.service';
-import { task } from 'src/task';
+import { SchedulerService } from '../Services/scheduler.service';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -13,28 +12,27 @@ import {
   styleUrls: ['./scheduler.component.css']
 })
 export class SchedulerComponent implements OnInit {
-  tasks: any[] = [];
   current: any;
 
-  internalTasks: task[] = [];
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
+  todo = [];
 
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
+  done = [];
 
-  constructor(private taskss: TasksService) {}
+  constructor(private schedulerService: SchedulerService) {}
 
   ngOnInit() {
-    this.taskss
-      .getTasks()
-      .subscribe(data => (this.tasks = data), err => console.log(err));
+    this.schedulerService
+      .getTasksTodo()
+      .subscribe((todo: any[]) => (this.todo = todo));
+    this.schedulerService
+      .getTasksDone()
+      .subscribe((done: any[]) => (this.done = done));
   }
 
   addTask() {
     this.todo.push(this.current);
   }
-  editTask(id, Value, Status) {
-    this.internalTasks[id] = { taskno: id, taskValue: Value, status: !Status };
-  }
+  editTask(id, Value, Status) {}
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
