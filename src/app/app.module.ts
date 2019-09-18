@@ -6,15 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
-import { TasksService } from './Services/tasks.service';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ImageComponent } from './image/image.component';
 import { FooterComponent } from './footer/footer.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
-import { TaskPipePipe } from './task-pipe.pipe';
 import { TestComponent } from './test/test.component';
 import { ProgramsComponent } from './programs/programs.component';
 import {
@@ -31,7 +28,6 @@ import { DialogComponent } from './dialog/dialog.component';
     ImageComponent,
     FooterComponent,
     SchedulerComponent,
-    TaskPipePipe,
     TestComponent,
     ProgramsComponent,
     DialogComponent
@@ -48,7 +44,7 @@ import { DialogComponent } from './dialog/dialog.component';
     DragDropModule,
     StoreModule.forRoot({}) // here we're pass a reducer property
   ],
-  providers: [TasksService],
+  providers: [],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })
