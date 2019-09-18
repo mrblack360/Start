@@ -14,6 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { TestComponent } from './test/test.component';
 import { ProgramsComponent } from './programs/programs.component';
+
+import { SchedulerService } from './Services/scheduler.service';
+
 import {
   MatDialogModule,
   MatFormFieldModule,
@@ -44,7 +47,7 @@ import { DialogComponent } from './dialog/dialog.component';
     DragDropModule,
     StoreModule.forRoot({}) // here we're pass a reducer property
   ],
-  providers: [],
+  providers: [SchedulerService],
   bootstrap: [AppComponent],
   entryComponents: [DialogComponent]
 })

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SchedulerService } from '../Services/scheduler.service';
 import {
   CdkDragDrop,
   moveItemInArray,
@@ -17,9 +18,16 @@ export class SchedulerComponent implements OnInit {
 
   done = [];
 
-  constructor() {}
+  constructor(private schedulerService: SchedulerService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.schedulerService
+      .getTasksTodo()
+      .subscribe((todo: any[]) => (this.todo = todo));
+    this.schedulerService
+      .getTasksDone()
+      .subscribe((done: any[]) => (this.done = done));
+  }
 
   addTask() {
     this.todo.push(this.current);
